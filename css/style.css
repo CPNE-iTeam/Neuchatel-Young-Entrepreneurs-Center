@@ -80,6 +80,7 @@ a {
   padding: 10px;
   width: 100%;
   max-width: 1100px;
+  overflow: auto;
 }
 
 .title:nth-child(1) {
@@ -276,12 +277,18 @@ a {
 }
 
 @media (max-width: 768px) {
+  #projets,
+  #evenements,
+  #contact {
+    padding: 140px 20px 0 20px;
+  }
+
   .bloc {
     padding: 20px;
   }
 
   .nav {
-    justify-content: center;
+    justify-content: initial;
     gap: 10%;
   }
 
