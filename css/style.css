@@ -9,11 +9,14 @@
   src: url('../fonts/txt.ttf') format('truetype');
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Txt', sans-serif;
   background: linear-gradient(to right, #1e1e2f, #2b2b3f);
   color: #ffffff;
-  scroll-behavior: smooth;
 }
 
 a {
@@ -27,6 +30,8 @@ a {
   padding: 5px 10px;
   transition: 1.2s ease;
   transform: translateY(0px);
+  margin: 0 auto;
+  cursor: pointer;
 }
 
 .link::after {
@@ -36,14 +41,14 @@ a {
   bottom: 0;
   width: 0%;
   height: 3px;
-  background: linear-gradient(90deg, #c9c9c9, #3e3e3e);
+  background: linear-gradient(90deg, #ffffff, transparent);
   border-radius: 3px;
   transition: 0.5s ease;
 }
 
 .link:hover {
   color: #bebebe;
-  transform: translateY(-5px);
+  scale: 1.1;
 }
 
 .link:hover::after {
@@ -77,11 +82,21 @@ a {
   max-width: 1100px;
 }
 
+.title:nth-child(1) {
+  font-size: 1.3em;
+  margin-bottom: 20px;
+}
+
+.title:nth-child(2) {
+  font-size: 0.7em;
+}
+
 #accueil {
   background-image: url(../images/test1.jpg);
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
+  margin-bottom: 115px;
 }
 
 .hero {
@@ -97,12 +112,9 @@ a {
   width: 95%;
 }
 
-#accueil {
-  margin-bottom: 150px;
-}
-
 #projets,
-#evenements {
+#evenements,
+#contact {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -167,19 +179,19 @@ a {
 .card-link::before {
   content: "";
   position: absolute;
-  top: -50%;
+  top: -60%;
   left: -50%;
   width: 200%;
-  height: 200%;
+  height: 220%;
   background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%);
   transform: rotate(25deg) translateX(-100%);
   pointer-events: none;
   opacity: 0;
-  transition: opacity 1.2s;
+  transition: opacity 1.5s;
 }
 
 .card-link:hover::before {
-  animation: shimmer 1.2s ease-out forwards;
+  animation: shimmer 1.5s ease-out forwards;
   opacity: 1;
 }
 
@@ -224,6 +236,34 @@ a {
   color: #e0e0e0;
 }
 
+.input {
+  margin: 50px auto;
+  outline: none;
+  color: white;
+  resize: none;
+  font-size: 1.1em;
+  transition: 1.5s;
+}
+
+.input:hover, .input:focus {
+  scale: 1.03;
+  border: solid 1px rgb(160, 160, 160);
+}
+
+.input:nth-child(3) {
+  height: 250px;
+}
+
+.send {
+  width: max-content;
+  padding: 20px;
+  margin: 50px auto;
+}
+
+.sec {
+  width: 95%;
+}
+
 .footer {
   display: flex;
   justify-content: center;
@@ -235,13 +275,9 @@ a {
   margin: 20px auto;
 }
 
-.sec {
-  width: 95%;
-}
-
 @media (max-width: 768px) {
   .bloc {
-    padding: 15px;
+    padding: 20px;
   }
 
   .nav {
@@ -275,9 +311,9 @@ a {
     width: 95%;
   }
 
-    .link:hover {
+  .link:hover {
     color: inherit;
-    transform: none;
+    scale: 1;
   }
 
   .link:hover::after {
@@ -291,5 +327,10 @@ a {
   .card-link:hover::before {
     animation: none;
     opacity: 0;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
   }
 }
