@@ -95,14 +95,17 @@
 
   <section class="section container" id="contact">
     <h2>Contact</h2>
+    <form action="api/contact.php" method="post">
+      <input name="subject" class="input bloc" type="text" placeholder="Sujet">
 
-    <input class="input bloc" type="text" placeholder="Sujet">
+      <textarea name="message" class="input bloc" type="text" placeholder="Message"></textarea>
 
-    <textarea class="input bloc" type="text" placeholder="Contenu"></textarea>
+      <button type="submit" class="bloc send">
+        <a class="link">Envoyer</a>
+      </button>
+    </form>
 
-    <div class="bloc send">
-      <a class="link">Envoyer</a>
-    </div>
+
   </section>
 
   <footer class="footer bloc sec">
